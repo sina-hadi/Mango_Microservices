@@ -52,7 +52,16 @@ namespace Mango.Web.Service
             });
         }
 
-      
+        public async Task<ResponseDto?> RemoveRangeFromCartAsync(string userId)
+        {
+            return await _baseService.SendAsync(new RequestDto()
+            {
+                ApiType = SD.ApiType.POST,
+                Data = userId,
+                Url = SD.ShoppingCartAPIBase + "/api/cart/RemoveCartDetails"
+            });
+        }
+
         public async Task<ResponseDto?> UpsertCartAsync(CartDto cartDto)
         {
             return await _baseService.SendAsync(new RequestDto()

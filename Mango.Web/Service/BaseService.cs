@@ -98,6 +98,10 @@ namespace Mango.Web.Service
                 {
                     case HttpStatusCode.NotFound:
                         return new() { IsSuccess = false, Message = "Not Found" };
+                    case HttpStatusCode.UnsupportedMediaType:
+                        return new() { IsSuccess = false, Message = "Unsupported Media Type" };
+                    case HttpStatusCode.BadRequest:
+                        return new() { IsSuccess = false, Message = "Bad Request" };
                     case HttpStatusCode.Forbidden:
                         return new() { IsSuccess = false, Message = "Access Denied" };
                     case HttpStatusCode.Unauthorized:

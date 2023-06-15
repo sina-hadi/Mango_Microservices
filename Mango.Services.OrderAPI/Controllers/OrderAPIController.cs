@@ -198,8 +198,8 @@ namespace Mango.Services.OrderAPI.Controllers
                         RewardsActivity = Convert.ToInt32(orderHeader.OrderTotal),
                         UserId = orderHeader.UserId
                     };
-                    string topicName = _configuration.GetValue<string>("TopicAndQueueNames:OrderCreatedTopic");
-                    await _messageBus.PublishMessage(rewardsDto,topicName);
+                    //string topicName = _configuration.GetValue<string>("TopicAndQueueNames:OrderCreatedTopic");
+                    //await _messageBus.PublishMessage(rewardsDto,topicName);
                     _response.Result = _mapper.Map<OrderHeaderDto>(orderHeader);
                 }
 
